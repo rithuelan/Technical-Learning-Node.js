@@ -88,3 +88,29 @@ The **OS (Operating System)** module provides information about the system’s *
 
 ### ▶ Run
 - Execute a script containing OS operations using:
+### 🧰 Usage
+- Securely store API keys and secrets.  
+- Configure app behavior (ports, modes, database URLs).  
+- Monitor and manage process lifecycle.
+
+---
+
+## 📚 Summary
+
+| Core Module | Purpose | Common Use |
+|--------------|----------|------------|
+| **fs** | File operations | Read, write, append files |
+| **path** | File path utilities | Cross-platform file paths |
+| **os** | System information | Performance monitoring |
+| **url** | URL handling | Parse and format URLs |
+| **events** | Event-driven handling | Custom events and async flow |
+| **process** | Runtime management | Environment variables, process control |
+
+---
+
+✅ **By mastering these core modules**, you can:  
+- Perform essential system operations in Node.js  
+- Handle files, directories, and URLs efficiently  
+- Build responsive, event-driven, and environment-aware applications  
+
+---
