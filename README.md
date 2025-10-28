@@ -10,7 +10,7 @@
 - Running scripts 
 - CommonJS vs ES modules 
 - package.json structure
-- 
+---
 **Core Modules** 
 - File system (fs) - read, write, append 
 - Path module 
@@ -18,3 +18,4 @@
 - URL module 
 - Events and EventEmitter 
 - Process object and environment variables 
+-------
