@@ -9,7 +9,8 @@
 - REPL basics 
 - Running scripts 
 - CommonJS vs ES modules 
-- package.json structure 
+- package.json structure
+- 
 **Core Modules** 
 - File system (fs) - read, write, append 
 - Path module 
