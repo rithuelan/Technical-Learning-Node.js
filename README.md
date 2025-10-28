@@ -1,7 +1,7 @@
 # Technical-Learning-Node.js
 
 # DAY-1 (27-10-2025)
-# Topic 1: **Node.js Basics**
+**Topic 1: Node.js Basics**
 **Getting Started**
 - Install Node.js and NPM 
 - Understanding the event loop 
