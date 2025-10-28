@@ -1,9 +1,4 @@
 # 🚀 Node.js Basics — Detailed Guide
-
-## 📘 Overview
-This document covers the **fundamental concepts** of Node.js to help you understand how it works, how to set it up, and how to execute JavaScript efficiently in a backend environment.  
-Each topic includes **Why, What, Where, How, Setup, Run, and Usage** explanations for clarity and practical understanding.
-
 ---
 
 ## 🧩 1️⃣ Getting Started
