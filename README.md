@@ -1,6 +1,6 @@
 # Technical-Learning-Node.js
 
-# DAY-1 (14-11-2025)
+# DAY-1 (13-11-2025)
 **Topic 1: Node.js Basics**
 **Getting Started**
 - Install Node.js and NPM 
