@@ -1,0 +1,23 @@
+// 1. NPM Ecosystem — Overview
+
+// NPM = Node Package Manager
+// It manages:
+// Installing packages (dependencies)
+
+        //npm init -y
+
+// 2. Installing Packages (Local vs Global)
+// Local Installation
+// Install inside the project (recommended).
+
+        //npm install lodash
+
+
+//Global Installation
+// Installed system-wide (not inside the project).
+
+        //npm install -g nodemon
+        // nodemon app.js
+
+
+        //npm install express
