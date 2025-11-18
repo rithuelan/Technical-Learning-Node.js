@@ -11,14 +11,4 @@ exact versions in **package-lock.json**
 scripts you can run with **npm run** ...
 
 
-<!-- setup -->
 
-# create a folder and enter it
-mkdir my-app
-cd my-app
-
-# create package.json interactively (recommended)
-npm init
-
-# OR create quickly with defaults
-npm init -y
