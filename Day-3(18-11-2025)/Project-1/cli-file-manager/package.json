@@ -1,0 +1,23 @@
+{
+  "name": "cli-file-manager",
+  "version": "1.0.0",
+  "description": "Advanced CLI tool to manage files and folders with Node.js",
+  "main": "lib/fileManager.js",
+  "bin": {
+    "filemgr": "./bin/filemgr.js"
+  },
+  "scripts": {
+    "start": "node bin/filemgr.js",
+    "dev": "nodemon bin/filemgr.js"
+  },
+  "keywords": ["CLI", "file", "folder", "Node.js"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
