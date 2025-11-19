@@ -34,143 +34,156 @@ Download and install from:
 https://nodejs.org
 
 
-### 2️⃣ Clone the Repository
+📘 CLI File Manager – Command Usage Guide
+🔧 Setup Instructions
+1. Make the CLI Tool Global
 
-git clone <your-repo-url>
-cd project
-
-### 3️⃣ Install Dependencies
-This CLI uses only **built-in Node.js modules**, so no external dependencies are required.
-
-### 4️⃣ Make the Script Executable (Optional for Global Use)
-
-Add this inside `package.json`:
-
-```json
-"bin": {
-  "filemgr": "filemgr.js"
-}
-Then run:
+To use your file manager from anywhere in the system, link it globally:
 
 npm link
-Now you can use the command globally:
 
+2. Use the Command Globally
+
+After linking:
 
 filemgr list
-🧑‍💻 Usage
-Run the tool using:
 
-php-template
+🧑‍💻 Running the CLI
+Run with Node (Local Project Execution)
 node filemgr.js <command> <args>
-Or if linked globally:
 
+Run Globally (After Linking)
 filemgr <command>
+
 📝 Available Commands
 📂 1. List Directory
-css
-
 filemgr list [directory]
-Shows all files and folders in the given directory.
 
-Defaults to current folder.
+
+Purpose: Displays all files and folders inside the given directory.
+Note: If no directory is provided, it lists the current folder.
 
 🏷️ 2. Create a File
-lua
-
 filemgr create <filename>
-Creates an empty file.
+
+
+Creates an empty file in the current directory.
 
 📍 3. Show File Location
-php-template
-
 filemgr location <file>
-Displays the absolute path.
+
+
+Shows the absolute (full) file path.
 
 📁 4. Show Folder Location
-php-template
-
 filemgr folderloc <folder>
-Displays absolute path of directories.
+
+
+Displays the absolute path of the specified folder.
 
 ✏️ 5. Edit File
-php-template
-
 filemgr edit <file>
-Allows you to enter new content.
-Saves immediately after typing.
 
-🔄 6. Rename File/Folder
-php-template
 
+Allows you to type new content directly in the terminal—saved immediately after entering.
+
+🔄 6. Rename File or Folder
 filemgr rename <oldName> <newName>
+
 📤 7. Upload (Copy File)
-php-template
-
 filemgr upload <source> <destination>
-Copies a file to a new location.
 
-🗑️ 8. Delete File/Folder (With Confirmation)
-arduino
 
+Copies a file from one location to another.
+
+🗑️ 8. Delete File or Folder (With Confirmation)
 filemgr delete <file/folder>
-Asks for confirmation before deleting.
 
-ℹ️ 9. File/Folder Info
-nginx
 
+Asks for confirmation before deleting—prevents accidental data loss.
+
+ℹ️ 9. File or Folder Info
 filemgr info <file/folder>
-Shows:
+
+
+Displays:
 
 Name
 
 Location
 
-Type
+Type (file/folder)
 
 Size
 
-Created time
+Created Time
 
-Last modified time
+Last Modified Time
 
-🔍 10. Search Files/Folders (Recursive)
-php-template
-
+🔍 10. Search Files and Folders (Recursive)
 filemgr search <keyword>
-Searches all folders inside current directory.
 
-⚙️ How It Works (Internally)
-Uses Node.js core modules:
 
-fs → file operations
+Recursively scans inside all subfolders for matching names.
 
-path → path resolution
+⚙️ Internal Working (How the Tool Functions)
 
-readline → user input
+The CLI uses Node.js core modules:
 
-Uses process.argv to parse CLI arguments
+fs → Handles all file operations
 
-Performs safe checks (existence, type) before operations
+path → Resolves file and folder paths
 
-Adds interactivity for dangerous operations (delete)
+readline → Allows interactive input
 
-Handles recursive search using filesystem traversal
+process.argv → Reads command arguments
+
+Additional Internal Logic:
+
+Performs existence checks before every operation
+
+Prevents dangerous actions without confirmation
+
+Handles recursive search through directory traversal
+
+Shows clear, readable error messages
 
 🔐 Safety Measures
+
 ✔ Confirmation required before deletion
-✔ Validates file/folder existence
-✔ Displays clear error messages
-✔ Prevents accidental overwrite
+✔ Prevents overwriting files unintentionally
+✔ Validates paths before operations
+✔ Error messages for invalid actions
 
 🧪 Testing Your CLI
-To test commands, try:
 
+Try the following commands to verify everything works:
 
-filemgr create test.txt
-filemgr edit test.txt
-filemgr list
-filemgr info test.txt
-filemgr rename test.txt demo.txt
-filemgr upload demo.txt copy.txt
-filemgr delete copy.txt
+Create a file
+
+Edit a file
+
+List directory contents
+
+Show file info
+
+Rename the file
+
+Upload (copy) it
+
+Delete the copied file
+
+Search for the renamed file
+
+Example test flow:
+
+filemgr create test.txt  
+filemgr edit test.txt  
+filemgr list  
+filemgr info test.txt  
+filemgr rename test.txt demo.txt  
+filemgr upload demo.txt copy.txt  
+filemgr delete copy.txt  
 filemgr search demo
+
+
