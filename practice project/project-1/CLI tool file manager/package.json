@@ -1,0 +1,15 @@
+{
+  "name": "cli-file-manager-singlefile",
+  "version": "1.0.0",
+  "description": "Single-file CLI that demonstrates Node.js core topics and manages files/folders with clear success messages.",
+  "main": "filemgr.js",
+  "bin": {
+    "filemgr": "./filemgr.js"
+  },
+  "scripts": {
+    "start": "node filemgr.js",
+    "interactive": "node filemgr.js interactive"
+  },
+  "author": "You",
+  "license": "MIT"
+}
