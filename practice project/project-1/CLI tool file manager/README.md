@@ -125,7 +125,7 @@ filemgr search <keyword>
 
 
 Recursively scans inside all subfolders for matching names.
-
+---
 ⚙️ Internal Working (How the Tool Functions)
 
 The CLI uses Node.js core modules:
@@ -147,14 +147,14 @@ Prevents dangerous actions without confirmation
 Handles recursive search through directory traversal
 
 Shows clear, readable error messages
-
+---
 🔐 Safety Measures
 
 ✔ Confirmation required before deletion
 ✔ Prevents overwriting files unintentionally
 ✔ Validates paths before operations
 ✔ Error messages for invalid actions
-
+---
 🧪 Testing Your CLI
 
 Try the following commands to verify everything works:
@@ -174,7 +174,7 @@ Upload (copy) it
 Delete the copied file
 
 Search for the renamed file
-
+---
 Example test flow:
 
 filemgr create test.txt  
@@ -185,5 +185,6 @@ filemgr rename test.txt demo.txt
 filemgr upload demo.txt copy.txt  
 filemgr delete copy.txt  
 filemgr search demo
+
 
 
