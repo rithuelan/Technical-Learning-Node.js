@@ -43,3 +43,13 @@
 - Buffers and binary data
 - Piping streams 
 ------
+
+# Day-4 (19-11-2025)
+**Balnace Topics and Corrections**
+- Buffers and binary data
+- Promise.allSettled
+- promise finaly
+- stream(duplex)
+
+**Practice Project:**  File upload/download utility with progress tracking 
+------
