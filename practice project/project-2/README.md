@@ -8,17 +8,17 @@ A simple yet powerful Node.js project that demonstrates how to upload and downlo
 
 This project provides a utility that supports:
 
--Uploading files from a client to a server
+- Uploading files from a client to a server
 
--Downloading server-side files
+- Downloading server-side files
 
--Real-time progress tracking during both upload and download
+- Real-time progress tracking during both upload and download
 
--Efficient memory usage using Node.js streams
+- Efficient memory usage using Node.js streams
 
--Handling large files without performance issues
+- Handling large files without performance issues
 
--Graceful error handling and user-friendly status messages
+- Graceful error handling and user-friendly status messages
 
 It is ideal for learning streams, buffers, and async programming, while creating something practical and industry-relevant.
 
@@ -28,13 +28,13 @@ It is ideal for learning streams, buffers, and async programming, while creating
 
 Streams allow processing files piece by piece instead of loading the entire file into memory.
 
-Readable Stream → Reads file data chunk by chunk
+- Readable Stream → Reads file data chunk by chunk
 
-Writable Stream → Writes data incrementally
+- Writable Stream → Writes data incrementally
 
-Duplex Stream → Two-way communication
+- Duplex Stream → Two-way communication
 
-Transform Stream → Modifies data while streaming
+- Transform Stream → Modifies data while streaming
 
 2. Buffers & Binary Data
 
@@ -85,3 +85,4 @@ This simulates real applications like cloud storage upload bars.
 🔧 Customizable input/output directories
 
 🧹 Auto-cleanup using Promise.finally()
+
