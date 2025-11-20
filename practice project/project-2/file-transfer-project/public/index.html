@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>File Upload / Download</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 18px rgba(0,0,0,0.08);
+    }
+
+    h2, h3 {
+      margin-top: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    .row {
+      margin-bottom: 15px;
+    }
+
+    input[type="file"] {
+      padding: 12px;
+      border: 2px dashed #bbb;
+      border-radius: 8px;
+      width: 100%;
+      background: #fafafa;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #0b5ed7;
+    }
+
+    button:disabled {
+      background: #9bbef7;
+      cursor: not-allowed;
+    }
+
+    progress {
+      width: 100%;
+      height: 18px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #progressText {
+      text-align: center;
+      margin-top: 5px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      background: #eef2ff;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .downloadBtn {
+      background: #28a745;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    .downloadBtn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>File Upload (Stream + Progress)</h2>
+
+    <!-- File input -->
+    <div class="row">
+      <input id="fileInput" type="file" multiple />
+    </div>
+
+    <!-- Upload button -->
+    <div class="row">
+      <button id="uploadBtn">Upload</button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="row">
+      <progress id="overallProgress" value="0" max="100"></progress>
+      <div id="progressText">Waiting for upload...</div>
+    </div>
+
+    <!-- Uploaded list -->
+    <h3>Uploaded Files</h3>
+    <button id="refresh">Refresh</button>
+
+    <ul id="files"></ul>
+  </div>
+
+  <script src="client.js"></script>
+</body>
+</html>
