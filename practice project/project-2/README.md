@@ -1,4 +1,4 @@
-# 📁 File Upload & Download Utility
+## 📁 File Upload & Download Utility
 ---------
 With Progress Tracking • Node.js • Streams • Buffers
 
@@ -24,7 +24,7 @@ It is ideal for learning streams, buffers, and async programming, while creating
 
 # 📚 Key Concepts Used
 ---
-1. Node.js Streams
+# 1. Node.js Streams
 
 Streams allow processing files piece by piece instead of loading the entire file into memory.
 
@@ -36,7 +36,7 @@ Streams allow processing files piece by piece instead of loading the entire file
 
 - Transform Stream → Modifies data while streaming
 
-2. Buffers & Binary Data
+# 2. Buffers & Binary Data
 
 Buffers help handle binary data such as file chunks, especially useful for:
 
@@ -46,7 +46,7 @@ Building progress indicators from byte sizes
 
 Efficient memory handling for large files
 
-3. Promises & Async Flow
+# 3. Promises & Async Flow
 
 The project uses:
 
@@ -58,7 +58,7 @@ Finally() for cleanup
 
 Async/Await for readable asynchronous logic
 
-4. Progress Tracking
+# 4. Progress Tracking
 
 The utility shows upload and download progress, displaying:
 
@@ -70,7 +70,7 @@ Current progress percentage
 
 This simulates real applications like cloud storage upload bars.
 
-🧩 Features
+## 🧩 Features
 
 📤 Upload files directly to the server
 
@@ -85,4 +85,5 @@ This simulates real applications like cloud storage upload bars.
 🔧 Customizable input/output directories
 
 🧹 Auto-cleanup using Promise.finally()
+
 
