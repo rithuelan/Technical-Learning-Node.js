@@ -18,15 +18,6 @@ This utility helps you **list, create, edit, rename, upload, delete, search, and
 
 ---
 
-## 📦 Project Structure
-
-project/
-│── filemgr.js # Main CLI script (bin entry point)
-│── package.json # Project metadata & scripts
-│── README.md # Documentation
-
----
-
 ## 🛠️ Installation
 
 ### 1️⃣ Install Node.js  
@@ -44,55 +35,42 @@ This CLI uses only **built-in Node.js modules**, so no external dependencies are
 
 ### 4️⃣ Make the Script Executable (Optional for Global Use)
 
-Add this inside `package.json`:
+1. Add CLI Entry in package.json
 
-```json
-"bin": {
-  "filemgr": "filemgr.js"
-}
-Then run:
+Inside your project’s package.json, define the CLI command name using the bin field.
 
-npm link
-Now you can use the command globally:
+2. Make the CLI Tool Global
 
-
-filemgr list
-🧑‍💻 Usage
-Run the tool using:
-
-php-template
-node filemgr.js <command> <args>
-Or if linked globally:
-
-filemgr <command>
-📘 CLI File Manager – Command Usage Guide
-🔧 Setup Instructions
-1. Make the CLI Tool Global
-
-To use your file manager from anywhere in the system, link it globally:
+Link your tool globally so it can be used from anywhere:
 
 npm link
 
-2. Use the Command Globally
+3. Use the Command Globally
 
-After linking:
+Once linked:
 
 filemgr list
 
-🧑‍💻 Running the CLI
-Run with Node (Local Project Execution)
+# 🧑‍💻 Running the CLI
+▶️ Local Project Execution
+
+Run using Node:
+
 node filemgr.js <command> <args>
 
-Run Globally (After Linking)
+🌍 Global Execution (After Linking)
+
+Run directly:
+
 filemgr <command>
 
-📝 Available Commands
+# 📝 Available Commands
 📂 1. List Directory
 filemgr list [directory]
 
 
-Purpose: Displays all files and folders inside the given directory.
-Note: If no directory is provided, it lists the current folder.
+Displays all files and folders inside the given directory.
+If no directory is provided, it lists the current one.
 
 🏷️ 2. Create a File
 filemgr create <filename>
@@ -104,19 +82,19 @@ Creates an empty file in the current directory.
 filemgr location <file>
 
 
-Shows the absolute (full) file path.
+Shows the absolute path of the file.
 
 📁 4. Show Folder Location
 filemgr folderloc <folder>
 
 
-Displays the absolute path of the specified folder.
+Displays the absolute folder path.
 
 ✏️ 5. Edit File
 filemgr edit <file>
 
 
-Allows you to type new content directly in the terminal—saved immediately after entering.
+Allows entering new file content directly through the terminal.
 
 🔄 6. Rename File or Folder
 filemgr rename <oldName> <newName>
@@ -131,19 +109,19 @@ Copies a file from one location to another.
 filemgr delete <file/folder>
 
 
-Asks for confirmation before deleting—prevents accidental data loss.
+Asks for confirmation before deleting to prevent accidental data loss.
 
 ℹ️ 9. File or Folder Info
 filemgr info <file/folder>
 
 
-Displays:
+# Displays:
 
 Name
 
-Location
+Full Location
 
-Type (file/folder)
+Type (file or folder)
 
 Size
 
@@ -151,68 +129,31 @@ Created Time
 
 Last Modified Time
 
-🔍 10. Search Files and Folders (Recursive)
+🔍 10. Search (Recursive)
 filemgr search <keyword>
 
 
-Recursively scans inside all subfolders for matching names.
+Searches all files/folders inside all subdirectories.
 
-⚙️ Internal Working (How the Tool Functions)
+# ⚙️ Internal Working (How It Works)
 
-The CLI uses Node.js core modules:
+The CLI is built entirely on Node.js core modules:
 
-fs → Handles all file operations
+fs → handles file operations
 
-path → Resolves file and folder paths
+path → resolves file/folder paths
 
-readline → Allows interactive input
+readline → collects user input when editing or confirming
 
-process.argv → Reads command arguments
+process.argv → reads command-line parameters
 
-Additional Internal Logic:
+Additional internal behavior:
 
-Performs existence checks before every operation
+Checks if a file or folder exists before any operation
 
-Prevents dangerous actions without confirmation
+Prevents unsafe actions with confirmations
 
-Handles recursive search through directory traversal
+Uses directory traversal for recursive search
 
-Shows clear, readable error messages
+Shows clean and descriptive error messages
 
-🔐 Safety Measures
-
-✔ Confirmation required before deletion
-✔ Prevents overwriting files unintentionally
-✔ Validates paths before operations
-✔ Error messages for invalid actions
-
-🧪 Testing Your CLI
-
-Try the following commands to verify everything works:
-
-Create a file
-
-Edit a file
-
-List directory contents
-
-Show file info
-
-Rename the file
-
-Upload (copy) it
-
-Delete the copied file
-
-Search for the renamed file
-
-Example test flow:
-
-filemgr create test.txt  
-filemgr edit test.txt  
-filemgr list  
-filemgr info test.txt  
-filemgr rename test.txt demo.txt  
-filemgr upload demo.txt copy.txt  
-filemgr delete copy.txt  
-filemgr search demo
