@@ -44,12 +44,33 @@
 - Piping streams 
 ------
 
-# Day-4 (19-11-2025)
-**Balnace Topics and Corrections**
+# Day-5 (19-11-2025)
+**Balance Topics and Corrections**
 - Buffers and binary data
 - Promise.allSettled
 - promise finaly
 - stream(duplex)
 
 **Practice Project:**  File upload/download utility with progress tracking 
+------
+
+# Day-4 (19-11-2025)
+# Topic 3: Web Development with Express
+
+**HTTP Fundamentals**
+- HTTP module basics 
+- Creating HTTP servers 
+- Request and response objects 
+- Status codes and headers 
+- Introduction to Express.js 
+- Setting up Express app
+  
+**Express Core**
+- Routing (GET, POST, PUT, DELETE) 
+- Route parameters and query strings 
+- Middleware concepts 
+- Built-in middleware (express.json, express.static) 
+- Custom middleware 
+- Error handling middleware 
+
 ------
