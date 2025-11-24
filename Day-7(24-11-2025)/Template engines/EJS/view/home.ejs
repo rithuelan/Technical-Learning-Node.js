@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EJS Example</title>
+</head>
+<body>
+    <h1>Welcome, <%= user.name %></h1>
+    <p>Your age is <%= user.age %></p>
+
+    <h3>Loop Example</h3>
+    <ul>
+        <% const items = ["Apple", "Banana", "Grapes"]; %>
+        <% items.forEach(item => { %>
+            <li><%= item %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
