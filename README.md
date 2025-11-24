@@ -44,7 +44,7 @@
 - Piping streams 
 ------
 
-# Day-5 (19-11-2025)
+# Day-5 (20-11-2025)
 **Balance Topics and Corrections**
 - Buffers and binary data
 - Promise.allSettled
@@ -54,7 +54,7 @@
 **Practice Project:**  File upload/download utility with progress tracking 
 ------
 
-# Day-4 (19-11-2025)
+# Day-6 (21-11-2025)
 # Topic 3: Web Development with Express
 
 **HTTP Fundamentals**
@@ -64,13 +64,23 @@
 - Status codes and headers 
 - Introduction to Express.js 
 - Setting up Express app
-  
-**Express Core**
 - Routing (GET, POST, PUT, DELETE) 
 - Route parameters and query strings 
+-------
+
+# Day-7 (24-11-2025)
+# Topic 3: Web Development with Express
+
+**Express Core** 
 - Middleware concepts 
 - Built-in middleware (express.json, express.static) 
 - Custom middleware 
-- Error handling middleware 
-
+- Error handling middleware
+  
+# Advanced Express
+- Router modules
+- Template engines (EJS, Pug)
+- Serving static files 
 ------
+
+
