@@ -83,4 +83,18 @@
 - Serving static files 
 ------
 
+# Day-8 (25-11-2025)
+# Topic 3: Web Development with Express
 
+**Express Core** 
+- Middleware concepts 
+- Serving static files 
+- File uploads (multer) 
+- Cookie and session management 
+- Request validation
+ 
+# RESTful API Design 
+- Cookie and session management 
+- REST principles 
+- API versioning 
+------
