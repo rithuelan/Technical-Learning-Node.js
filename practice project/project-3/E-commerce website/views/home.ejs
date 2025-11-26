@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-Commerce Home</title>
+</head>
+<body>
+  <h1>Products</h1>
+
+  <ul>
+    <% products.forEach(p => { %>
+      <li> <%= p.name %> - ₹<%= p.price %> </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
+
