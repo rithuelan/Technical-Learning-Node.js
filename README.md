@@ -101,7 +101,7 @@
 
 # Day-9 (27-11-2025)
 # Topic 4: Database
-**Mongo db**
+**MongoDB**
 - MongoDB basics and installation
 - CRUD operations
 - Mongoose ODM
