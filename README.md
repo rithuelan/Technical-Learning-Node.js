@@ -98,3 +98,15 @@
 - REST principles 
 - API versioning 
 ------
+
+# Day-9 (27-11-2025)
+# Topic 4: Database
+**Mongo db**
+- MongoDB basics and installation
+- CRUD operations
+- Mongoose ODM
+- Schema design and validation
+- Relationships (embedded vs referenced)
+- Aggregation pipeline
+- Indexing basics
+-------
