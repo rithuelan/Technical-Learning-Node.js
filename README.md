@@ -110,3 +110,12 @@
 - Aggregation pipeline
 - Indexing basics
 -------
+
+# Day-10 (28-11-2025)
+# Topic 4: Database
+**MYSQL**
+- PostgreSQL/MySQL basics
+- SQL queries (SELECT, JOIN, WHERE)
+- Sequelize or TypeORM
+- Migrations and seeders
+-------
