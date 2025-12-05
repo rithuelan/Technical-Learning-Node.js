@@ -1,0 +1,25 @@
+{
+  "name": "day-15-05-12-2025",
+  "version": "1.0.0",
+  "description": "",
+  "main": "insert.js",
+  "scripts": {
+    "insert:local": "dotenv -e .env.local -- node insert.js",
+    "insert:atlas": "dotenv -e .env.atlas -- node insert.js",
+    "query:local": "dotenv -e .env.local -- node query_all.js",
+    "query:atlas": "dotenv -e .env.atlas -- node query_all.js",
+    "simulate:local": "dotenv -e .env.local -- node simulate_network.js",
+    "retry:local": "dotenv -e .env.local -- node retry_example.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mongodb": "^7.0.0"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0"
+  }
+}

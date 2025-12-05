@@ -1,0 +1,22 @@
+{
+  "name": "phase-2",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "seed:local": "dotenv -e .env.local -- node src/seed.js",
+    "seed:atlas": "dotenv -e .env.atlas -- node src/seed.js",
+    "start:local": "dotenv -e .env.local -- node src/index.js",
+    "start:atlas": "dotenv -e .env.atlas -- node src/index.js",
+    "drop:local": "dotenv -e .env.local -- node src/drop.js",
+    "drop:atlas": "dotenv -e .env.atlas -- node src/drop.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0",
+    "mongoose": "^7.0.0"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.4.4"
+  }
+}
