@@ -1,0 +1,15 @@
+{
+  "name": "day-17-09-12-2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "seed": "node src/seed.js",
+    "test:performance": "node src/performanceTests.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "mongoose": "^8.0.0"
+  }
+}
