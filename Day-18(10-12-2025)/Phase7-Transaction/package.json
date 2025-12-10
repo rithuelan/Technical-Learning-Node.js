@@ -1,0 +1,21 @@
+{
+  "name": "phase7-transaction",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "seed": "node src/seed.js",
+    "transaction": "node src/transaction_example.js",
+    "failed-transaction": "node src/failed_transaction_sim.js",
+    "perf": "node src/perf.js",
+    "explain": "node src/explain_slow_queries.js",
+    "index-test": "node src/indexing_impact_test.js",
+    "split-example": "node src/split_collections_example.js"
+  },
+  "dependencies": {
+    "mongoose": "^8.15.0",
+    "@faker-js/faker": "^8.0.2",
+    "dotenv": "^16.4.0"
+  }
+}
