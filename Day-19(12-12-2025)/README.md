@@ -1,4 +1,4 @@
-📘 Authentication & Security – Conceptual Guide (README.md)
+
 ## 1. Authentication
 
 Authentication verifies who the user is.
