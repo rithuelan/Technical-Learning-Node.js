@@ -1,16 +1,19 @@
-Clustering and Load Balancing
 
-Node.js runs on a single thread, so CPU-intensive tasks can block the event loop. Clustering allows multiple Node.js processes to run across CPU cores.
+# Node.js Performance & Advanced APIs
 
-Key points:
+This guide covers key concepts and examples for **scaling, performance optimization, caching, and real-time APIs** in Node.js.
 
-Uses cluster module.
+---
 
-Each worker is a separate process but shares the same server port.
+## **1. Clustering and Load Balancing**
+Node.js runs on a single thread. CPU-heavy tasks can block the event loop. Clustering allows running multiple Node.js processes across CPU cores.
 
-Works well with multi-core systems.
+**Key Points:**
+- Uses `cluster` module.
+- Each worker is a separate process but shares the same server port.
+- Works well on multi-core systems.
 
-Example concept:
+**Example:**
 
 import cluster from "cluster";
 import os from "os";
@@ -22,84 +25,75 @@ if (cluster.isPrimary) {
 } else {
   http.createServer((req, res) => res.end("Hello from worker")).listen(3000);
 }
+# 2. Child Processes
+Run external processes without blocking Node.js.
 
-Child Processes
+Key Methods:
 
-Child processes allow running external processes (like shell commands) without blocking Node.js.
+spawn → stream data continuously.
 
-Key methods:
+exec → run command and get full output.
 
-spawn → Stream data continuously.
-
-exec → Run command and get full output.
-
-fork → Run another Node.js script as a child.
+fork → run another Node.js script as a child.
 
 Example:
 
+javascript
+Copy code
 import { exec } from "child_process";
 
 exec("ls -la", (err, stdout, stderr) => {
   console.log(stdout);
 });
-
-Worker Threads
-
-Runs JS code in parallel threads.
-
-Good for CPU-intensive tasks.
-
-Uses worker_threads module.
+# 3. Worker Threads
+Runs JavaScript code in parallel threads—ideal for CPU-intensive tasks.
 
 Example:
 
+javascript
+Copy code
 import { Worker } from "worker_threads";
 
 const worker = new Worker("./worker.js");
 worker.on("message", console.log);
 worker.postMessage("Start");
-
-PM2 Process Manager
-
-Advanced process manager for Node.js.
-
-Handles clustering, process monitoring, restarts, logs.
+# 4. PM2 Process Manager
+Advanced process manager for Node.js apps.
 
 Installation:
 
+bash
+Copy code
 npm install -g pm2
+Commands:
 
-
-Start server:
-
+bash
+Copy code
 pm2 start server.js --name "app"
 pm2 list
 pm2 logs app
 pm2 restart app
-
-Performance Profiling
-
-Helps identify slow parts of code.
+# 5. Performance Profiling
+Identify slow parts of code.
 
 Tools:
 
 Node.js built-in profiler: node --inspect server.js
 
-Chrome DevTools (connect via chrome://inspect)
+Chrome DevTools: chrome://inspect
 
 clinic.js for advanced profiling
 
-Memory Leak Detection
+# 6. Memory Leak Detection
+Monitor memory usage:
 
-Check memory usage via process.memoryUsage().
+javascript
+Copy code
+console.log(process.memoryUsage());
+Tools:
 
-Use tools like:
-
-clinic doctor
-
-heapdump
-
-Common causes:
+clinic doctor, heapdump
+Common Causes:
 
 Unreleased event listeners
 
@@ -107,104 +101,82 @@ Global variables
 
 Long-lived closures
 
-Event Loop Optimization
-
+# 7. Event Loop Optimization
 Avoid blocking operations.
 
 Use async I/O for DB or file operations.
 
-CPU-heavy tasks → offload to Worker Threads or Child Processes.
+Offload CPU-heavy tasks to Worker Threads or Child Processes.
 
-Measure event loop delay using perf_hooks:
+Measure event loop delay:
 
+javascript
+Copy code
 import { monitorEventLoopDelay } from "perf_hooks";
-
-Caching
+# 8. Caching
 In-Memory Caching
+Store frequently-used data in memory (e.g., Map, node-cache).
 
-Store frequently-used data in memory.
+Pros: Fast, simple.
 
-Example: node-cache, Map.
-
-Pros: fast, simple.
-
-Cons: resets on server restart.
+Cons: Resets on server restart.
 
 Redis Basics
-
 External key-value store.
 
-Can persist data, share cache between multiple servers.
+Can persist data and share cache across servers.
 
-Install: npm install redis.
-
+bash
+Copy code
+npm install redis
 Cache Strategies
+LRU: Evict least recently used items.
 
-LRU (Least Recently Used) → Evict least recently used items.
-
-TTL (Time to Live) → Expire items after fixed time.
+TTL: Expire items after fixed time.
 
 Session Storage in Redis
+Central storage for sessions across clustered servers.
 
-Store user sessions centrally.
-
-Useful for clustered servers.
-
+javascript
+Copy code
 import session from "express-session";
 import connectRedis from "connect-redis";
-
 Caching Patterns
+Read-through: Load from cache; if miss, fetch DB.
 
-Read-through cache: Load from cache; if miss, fetch from DB.
+Write-through: Update cache immediately with DB changes.
 
-Write-through cache: Update cache immediately when DB changes.
+Cache-aside: App explicitly handles cache updates.
 
-Cache-aside: Application handles cache updates explicitly.
-
-Real-Time & Advanced APIs
+# 9. Real-Time & Advanced APIs
 WebSockets with Socket.io
+Full-duplex communication (client ↔ server).
 
-Full-duplex communication between client & server.
-
-Example:
-
+javascript
+Copy code
 import { Server } from "socket.io";
 const io = new Server(3000);
 io.on("connection", socket => console.log("User connected"));
-
 Server-Sent Events (SSE)
-
-Server pushes events over HTTP.
-
-Simple & unidirectional (server → client).
+Simple, unidirectional (server → client) event streaming over HTTP.
 
 GraphQL with Apollo Server
+Define types, queries, and mutations.
 
-Query language for APIs.
-
-Define types, queries, mutations.
-
-Example:
-
+javascript
+Copy code
 import { ApolloServer, gql } from "apollo-server";
+
 const typeDefs = gql`type Query { hello: String }`;
 const resolvers = { Query: { hello: () => "Hi" } };
+
 new ApolloServer({ typeDefs, resolvers }).listen();
+GraphQL Schemas & Resolvers
+Schema → Defines data structure.
 
-GraphQL Schemas and Resolvers
-
-Schema: Defines data structure.
-
-Resolver: Defines how to fetch data.
+Resolver → Defines how to fetch data.
 
 DataLoader for Batching
-
-Avoid N+1 problem.
-
-Batches multiple DB requests into one.
+Avoid N+1 query problem by batching DB requests.
 
 Subscriptions
-
-Real-time updates in GraphQL.
-
-Uses PubSub to push data to clients.
