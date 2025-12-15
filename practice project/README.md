@@ -255,22 +255,6 @@ This ensures:
 * Multi-core clustering
 * Log management
 * CPU & memory monitoring
-
-Useful Commands:
-
-```bash
-pm2 monit
-pm2 logs
-pm2 restart all
-pm2 delete all
-```
-
----
-
-## 🎓 Academic / Interview Summary
-
-> *This project demonstrates how Node.js applications scale in production using clustering, PM2, Redis caching, worker threads, and real-time communication via WebSockets, SSE, and GraphQL subscriptions.*
-
 ---
 
 ## ✅ Learning Outcomes
@@ -290,17 +274,4 @@ pm2 delete all
 * Horizontal scaling with multiple servers
 * Monitoring using Prometheus & Grafana
 
----
 
-## 🏁 Conclusion
-
-This project is a **complete Advanced Node.js reference implementation** and can be used for:
-
-* Practice
-* Exams (NPTEL)
-* Interviews
-* Portfolio projects
-
----
-
-✨ Happy Coding!
